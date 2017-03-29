@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HalmaFX.iml" filepath="$PROJECT_DIR$/HalmaFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/HalmaFX-master.iml" filepath="$PROJECT_DIR$/.idea/HalmaFX-master.iml" />
     </modules>
   </component>
 </project>
