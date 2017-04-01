@@ -16,5 +16,25 @@ public class PrintTools {
         }
         println(stack+"");
     }
+    public static void print2DArrayInt(int[][] array) {
+        for (int y = 0; y < array.length; y++) {
+            for (int x = 0; x < array.length; x++) {
+                print(array[x][y] + " ");
+            }
+            println("");
+        }
+    }
+    public static void print2DArrayString(String[][] array){
+        for(int y=0;y<array.length;y++){
+            for(int x=0;x<array.length;x++){
+                print(array[x][y]+" ");
+            }
+            println("");
+        }
+
+
+
+    }
+
 
 }

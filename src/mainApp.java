@@ -2,12 +2,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-
-import java.io.*;
-import java.net.URL;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -18,6 +22,9 @@ import static Tools.PrintTools.*;
 public class mainApp extends Application{
     public static List<Point2D> player1Start;
     public static List<Point2D> player2Start;
+    public static MediaPlayer player;
+
+    public static Stage crossClassStage;
 
 
     public static void main(String[] args){
@@ -29,20 +36,41 @@ public class mainApp extends Application{
 
             File fxml=new File(this.getClass().getResource("/main.fxml").getPath());
             if(fxml.exists()){
-                print("Exists");
+                print("");
             }
-            readFiles();
+            readFiles(); //read in starting coords
 
 
 
             Pane root = new FXMLLoader().load(this.getClass().getResource("/main.fxml"));
             Scene scene=new Scene(root);
 
-            primaryStage.setTitle("HalmaFX");
+            root.setBackground(new Background(new BackgroundImage(new Image("Resources/homes.png"), BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
 
+
+
+
+
+            primaryStage.setResizable(false);
+            primaryStage.setTitle("HalmaFX-Marcus Joachim");
+            primaryStage.getIcons().add(new Image("Resources/icon5.png"));
             primaryStage.setScene(scene);
 
-            primaryStage.show();
+            primaryStage.setOnCloseRequest((t)-> System.exit(0));
+
+
+            //this is the only way i could think of at the time to extend my stage to the controllers
+            crossClassStage=primaryStage;
+            crossClassStage.show();
+
+
+            File song=new File(this.getClass().getResource("Resources/wunluv.wav").getPath());
+            Media clip=new Media(song.toURI().toString());
+            player =new MediaPlayer(clip);
+            print(player.getTotalDuration() + "");
+
+
+
 
         } catch (IOException e) {
             errprint(e.getLocalizedMessage() +" " +e.getCause());

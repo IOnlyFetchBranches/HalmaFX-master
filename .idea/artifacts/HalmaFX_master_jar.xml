@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="HalmaFX-master:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HalmaFX_master_jar</output-path>
+    <root id="archive" name="HalmaFX-master.jar">
+      <element id="module-output" name="HalmaFX-master" />
+    </root>
+  </artifact>
+</component>

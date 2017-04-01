@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainController">
    <children>
-      <GridPane fx:id="board" gridLinesVisible="true" layoutX="59.0" layoutY="48.0" prefHeight="298.0" prefWidth="299.0">
+      <GridPane fx:id="board" blendMode="SRC_ATOP" gridLinesVisible="true" layoutX="59.0" layoutY="48.0" prefHeight="298.0" prefWidth="299.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -46,6 +44,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
+      <CheckBox fx:id="musicCheck" layoutX="358.0" layoutY="364.0" mnemonicParsing="false" text="Music" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></CheckBox>
+      <ToolBar prefHeight="35.0" prefWidth="417.0" style="-fx-background-color: transparent;">
+        <items>
+          <Button fx:id="resetButton" mnemonicParsing="false" prefHeight="0.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white;" text="New" />
+            <Button fx:id="aboutButton" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white;" text="About" />
+            <Button fx:id="helpButton" layoutX="66.0" layoutY="9.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white;" text="Help" />
+            <Label fx:id="turnText" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+        </items>
+      </ToolBar>
+      <Line endX="313.0" layoutX="102.0" layoutY="35.0" startX="-100.0" stroke="WHITE" />
+      <CheckBox fx:id="disableConfirmCheck" layoutX="185.0" layoutY="364.0" mnemonicParsing="false" text="Disable Move Confirmation" textFill="WHITE" />
+      <CheckBox fx:id="autoTurnCheck" layoutX="23.0" layoutY="364.0" mnemonicParsing="false" text="Manual Turn [Cheater]" textFill="WHITE" />
 
    </children>
 </AnchorPane>
