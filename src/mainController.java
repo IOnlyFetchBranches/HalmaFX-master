@@ -226,7 +226,8 @@ public class mainController implements Initializable {
             @SuppressWarnings("Duplicates")
             @Override
             protected Integer call() throws Exception {
-                int i=0;
+                long i=0; //long so a clever person couldn't leave this open and eventually force a too big int error :P
+                //of course they could still do it but it would take a *cough* long time haha
                 boolean isResetting;
 
                 while (currentThread().isAlive()) {
