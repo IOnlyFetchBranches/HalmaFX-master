@@ -4,6 +4,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
@@ -63,8 +64,15 @@ public class mainApp extends Application{
             crossClassStage.show();
 
 
+            File song=new File(this.getClass().getResource("Resources/wunluv.wav").getPath());
+            Media clip=new Media(song.toURI().toString());
+            player =new MediaPlayer(clip);
+            print(player.getTotalDuration() + "");
 
-        } catch (Exception e) {
+
+
+
+        } catch (IOException e) {
             errprint(e.getLocalizedMessage() +" " +e.getCause());
             printStack(e);
         }
